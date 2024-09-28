@@ -124,37 +124,99 @@ import "./index.css";
 // };
 
 // Get advice
-function App() {
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
+// function App() {
+//   const [advice, setAdvice] = useState("");
+//   const [count, setCount] = useState(0);
 
-  async function getAdvice() {
-    const res = await fetch("https://api.adviceslip.com/advice");
-    const data = await res.json();
-    setAdvice(data.slip.advice);
-    setCount((c) => c + 1);
-  }
-  useEffect(function () {
-    getAdvice();
-  }, []);
+//   async function getAdvice() {
+//     const res = await fetch("https://api.adviceslip.com/advice");
+//     const data = await res.json();
+//     setAdvice(data.slip.advice);
+//     setCount((c) => c + 1);
+//   }
+//   useEffect(function () {
+//     getAdvice();
+//   }, []);
 
-  return (
-    <div>
-      <h1>{advice}</h1>
-      <button onClick={getAdvice}>Get advice</button>
-      <Message count={count} />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>{advice}</h1>
+//       <button onClick={getAdvice}>Get advice</button>
+//       <Message count={count} />
+//     </div>
+//   );
+// }
 
-function Message(props) {
-  return (
-    <p>
-      You have read <strong>{props.count}</strong> pieces of advice.
-    </p>
-  );
-}
+// function Message(props) {
+//   return (
+//     <p>
+//       You have read <strong>{props.count}</strong> pieces of advice.
+//     </p>
+//   );
+// }
 
+
+
+// Flashcard
+// const flashcardData = [
+//   {
+//     id: 3457,
+//     question: "What language is REACT based on?",
+//     answer: "Javascript",
+//   },
+//   {
+//     id: 7336,
+//     question: "What are the building blocks of REACT apps?",
+//     answer: "Components",
+//   },
+//   {
+//     id: 8832,
+//     question: "What is the name of the syntax used to describe a UI in REACT?",
+//     answer: "Jsx",
+//   },
+//   {
+//     id: 1297,
+//     question: "How to pass data from parent to child components?",
+//     answer: "Props",
+//   },
+//   {
+//     id: 2002,
+//     question: "How to give components memory?",
+//     answer: "useState hook",
+//   },
+//   {
+//     id: 3457,
+//     question:
+//       "What do we call an input element that is completely synchronised with state?",
+//     answer: "Controlled element",
+//   },
+// ];
+// function App() {
+//   return (
+//     <div className="flashcards">
+//       {flashcardData.map((flashcard, index) => (
+//         <Flashcard
+//           key={index}
+//           question={flashcard.question}
+//           answer={flashcard.answer}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+
+// function Flashcard({ question, answer }) {
+//   const [isFlipped, setIsFlipped] = useState(false);
+
+//   return (
+//     <div
+//       className={`flashcard ${isFlipped ? "selected" : ""}`}
+//       onClick={() => setIsFlipped(!isFlipped)}
+//     >
+//       {isFlipped ? answer : question}
+//     </div>
+//   );
+// }
 
 export default App;
 createRoot(document.getElementById("root")).render(
