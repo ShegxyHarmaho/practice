@@ -1,61 +1,70 @@
 import { StrictMode, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
 // Mini portfolio
-// function App() {
-//   return (
-//     <div className="card">
-//       <Avatar />
-//       <div className="data">
-//         <Intro />
-//         <SkillList />
-//       </div>
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+        <SkillList />
+      </div>
+    </div>
+  );
+}
 
-// function Avatar() {
-//   return (
-//     <div>
-//       <img className="avatar" src="arrow.png " alt="arrow" />
-//     </div>
-//   );
-// }
+function Avatar() {
+  return (
+    <div>
+      <img className="avatar" src="arrow.png " alt="arrow" />
+    </div>
+  );
+}
 
-// function Intro() {
-//   return (
-//     <div className="">
-//       <h1>Oluwasegun Amao</h1>
-//       <p>
-//         Full-stack web developer and teacher at Udemy. When not coding or
-//         preparing a course, I like to play board games, to cook (and eat), or
-//         just enjoy the Portuguese sun at the beach.
-//       </p>
-//     </div>
-//   );
-// }
+function Intro() {
+  return (
+    <div className="">
+      <h1>Oluwasegun Amao</h1>
+      <p>
+        Full-stack web developer and teacher at Udemy. When not coding or
+        preparing a course, I like to play board games, to cook (and eat), or
+        just enjoy the Portuguese sun at the beach.
+      </p>
+    </div>
+  );
+}
 
-// function SkillList() {
-//   return (
-//     <div className="skill-list">
-//       <Skill skill="HTML+CSS" emoji="💪" color="#123456" />
-//       <Skill skill="Javascript" emoji="💪" color="yellow" />
-//       <Skill skill="Web Design" emoji="💪" color="green" />
-//       <Skill skill="Git and Github" emoji="💪" color="red" />
-//       <Skill skill="REACT" emoji="💪" color="lightblue" />
-//       <Skill skill="Svelte" emoji="💪" color="red" />
-//     </div>
-//   );
-// }
-// function Skill(props) {
-//   return (
-//     <div className="skill" style={{ backgroundColor: props.color }}>
-//       <span>{props.skill}</span>
-//       <span>{props.emoji}</span>
-//     </div>
-//   );
-// }
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill skill="HTML+CSS" emoji="💪" color="#123456" />
+      <Skill skill="Javascript" emoji="💪" color="yellow" />
+      <Skill skill="Web Design" emoji="💪" color="green" />
+      <Skill skill="Git and Github" emoji="💪" color="red" />
+      <Skill skill="REACT" emoji="💪" color="lightblue" />
+      <Skill skill="Svelte" emoji="💪" color="red" />
+    </div>
+  );
+}
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
+    </div>
+  );
+}
+
+// Prop validation
+Skill.propTypes = {
+  skill: PropTypes.string.isRequired,
+  emoji: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};
+// greeting
 
 // function Greeting(props) {
 //   return <h1>Hello, {props.name}!</h1>;
@@ -154,8 +163,6 @@ import "./index.css";
 //     </p>
 //   );
 // }
-
-
 
 // Flashcard
 // const flashcardData = [
