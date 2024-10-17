@@ -1,1 +1,1 @@
-A repository where I practice small react projects. It currently includes a mini count app and a mini portfolio design all which are represented using line comments.
+A repository where I practice small react projects. It currently includes a mini count app and a mini portfolio design, a single page to get advice with the use of Api and a Flashcard project all which are represented using line comments.
