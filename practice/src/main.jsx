@@ -81,56 +81,56 @@ Skill.propTypes = {
 
 // counter app
 
-// function App() {
-//   return (
-//     <div>
-//       <CountComponent />
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div>
+      <CountComponent />
+    </div>
+  );
+}
 
-// const CountComponent = () => {
-//   const [count, setCount] = useState(0);
-//   const [step, setStep] = useState(1);
+const CountComponent = () => {
+  const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
 
-//   const calculateNewDate = () => {
-//     const currentDate = new Date();
-//     currentDate.setDate(currentDate.getDate() + (count + step));
-//     return currentDate.toDateString();
-//   };
+  const calculateNewDate = () => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + (count + step));
+    return currentDate.toDateString();
+  };
 
-//   return (
-//     <div>
-//       <label>
-//         Enter Count:{count}
-//         {/* <input
-//           type="number"
-//           value={count}
-//           onChange={(e) => setCount(Number(e.target.value))}
-//         /> */}
-//         <button onClick={() => setCount(count + 1)}>+</button>
-//         <button onClick={() => setCount(count - 1)}>-</button>
-//       </label>
-//       <br />
+  return (
+    <div>
+      <label>
+        Enter Count:{count}
+        {/* <input
+          type="number"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        /> */}
+        <button onClick={() => setCount(count + 1)}>+</button>
+        <button onClick={() => setCount(count - 1)}>-</button>
+      </label>
+      <br />
 
-//       <label>
-//         Enter Step:{step}
-//         {/* <input
-//           type="number"
-//         value = {step}
-//           onChange={(e) => setStep(Number(e.target.value))}
-//         /> */}
-//         <button onClick={() => setStep(step + 1)}>+</button>
-//         <button onClick={() => setStep(step - 1)}>-</button>
-//       </label>
-//       <br />
+      <label>
+        Enter Step:{step}
+        {/* <input
+          type="number"
+        value = {step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        /> */}
+        <button onClick={() => setStep(step + 1)}>+</button>
+        <button onClick={() => setStep(step - 1)}>-</button>
+      </label>
+      <br />
 
-//       <p>{`The new date, ${
-//         count + step
-//       } days from today, is: ${calculateNewDate()}`}</p>
-//     </div>
-//   );
-// };
+      <p>{`The new date, ${
+        count + step
+      } days from today, is: ${calculateNewDate()}`}</p>
+    </div>
+  );
+};
 
 // Get advice
 // function App() {
