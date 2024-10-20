@@ -164,66 +164,78 @@ const CountComponent = () => {
 //   );
 // }
 
-// Flashcard
-// const flashcardData = [
-//   {
-//     id: 3457,
-//     question: "What language is REACT based on?",
-//     answer: "Javascript",
-//   },
-//   {
-//     id: 7336,
-//     question: "What are the building blocks of REACT apps?",
-//     answer: "Components",
-//   },
-//   {
-//     id: 8832,
-//     question: "What is the name of the syntax used to describe a UI in REACT?",
-//     answer: "Jsx",
-//   },
-//   {
-//     id: 1297,
-//     question: "How to pass data from parent to child components?",
-//     answer: "Props",
-//   },
-//   {
-//     id: 2002,
-//     question: "How to give components memory?",
-//     answer: "useState hook",
-//   },
-//   {
-//     id: 3457,
-//     question:
-//       "What do we call an input element that is completely synchronised with state?",
-//     answer: "Controlled element",
-//   },
-// ];
-// function App() {
-//   return (
-//     <div className="flashcards">
-//       {flashcardData.map((flashcard, index) => (
-//         <Flashcard
-//           key={index}
-//           question={flashcard.question}
-//           answer={flashcard.answer}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
+Flashcard
+const flashcardData = [
+  {
+    id: 3457,
+    question: "What language is REACT based on?",
+    answer: "Javascript",
+  },
+  {
+    id: 7336,
+    question: "What are the building blocks of REACT apps?",
+    answer: "Components",
+  },
+  {
+    id: 8832,
+    question: "What is the name of the syntax used to describe a UI in REACT?",
+    answer: "Jsx",
+  },
+  {
+    id: 1297,
+    question: "How to pass data from parent to child components?",
+    answer: "Props",
+  },
+  {
+    id: 2002,
+    question: "How to give components memory?",
+    answer: "useState hook",
+  },
+  {
+    id: 3457,
+    question:
+      "What do we call an input element that is completely synchronised with state?",
+    answer: "Controlled element",
+  },
+];
 
-// function Flashcard({ question, answer }) {
-//   const [isFlipped, setIsFlipped] = useState(false);
+function App() {
+  return (
+    <div className="flashcards">
+      {flashcardData.map((flashcard, index) => (
+        <Flashcard
+          key={index}
+          question={flashcard.question}
+          answer={flashcard.answer}
+        />
+      ))}
+    </div>
+  );
+}
 
-//   return (
-//     <div
-//       className={`flashcard ${isFlipped ? "selected" : ""}`}
-//       onClick={() => setIsFlipped(!isFlipped)}
-//     >
-//       {isFlipped ? answer : question}
-//     </div>
-//   );
-// }
+function Flashcard({ question, answer }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (isFlipped) {
+      timer = setTimeout(() => {
+        setIsFlipped(false);
+      }, 3000); // 3 seconds
+    }
+    return () => clearTimeout(timer);
+  }, [isFlipped]);
+
+  return (
+    <div
+      className={`flashcard ${isFlipped ? "selected" : ""}`}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      {isFlipped ? answer : question}
+    </div>
+  );
+}
+
 
 export default App;
 createRoot(document.getElementById("root")).render(
